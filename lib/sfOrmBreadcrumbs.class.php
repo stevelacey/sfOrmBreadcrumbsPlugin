@@ -80,5 +80,46 @@ abstract class sfOrmBreadcrumbs
     }
   }
   
+  protected function getCaseForItem($item)
+  {
+    $case = isset($item['case']) ? $item['case'] : null;
+	
+	if($case == null)
+	{  
+      $config = $this->getConfig();
+      $case = isset($config['_default_case']) ? $config['_default_case'] : null;
+	}
+	
+	return $case;
+  }
+  
+  protected function switchCase($name, $case)
+  {
+    switch($case)
+    {
+      case 'ucfirst':
+        $name = ucfirst(mb_strtolower($name,'UTF-8'));
+        break;
+	
+	  case 'lcfirst':
+        $name = lcfirst(mb_strtolower($name,'UTF-8'));
+        break;
+      
+	  case 'strtolower':
+        $name = mb_strtolower($name,'UTF-8');
+        break;
+		
+	  case 'strtoupper':
+        $name = mb_strtoupper($name,'UTF-8');
+        break;
+		
+      case 'ucwords':
+        $name = ucwords(mb_strtolower($name,'UTF-8'));
+        break;
+    }
+	
+	return $name;
+  }
+  
 }
 ?>

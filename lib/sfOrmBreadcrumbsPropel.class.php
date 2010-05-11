@@ -35,6 +35,9 @@ class sfOrmBreadcrumbsPropel extends sfOrmBreadcrumbs
       $url = isset($item['route']) ? $routing->generate($item['route']) : null;
       $breadcrumb = array('name' => $item['name'], 'url' => $url);
     }
+	
+	$case = $this->getCaseForItem($item);
+	$breadcrumb['name'] = $this->switchCase($breadcrumb['name'], $case);
     
     return $breadcrumb;
   }

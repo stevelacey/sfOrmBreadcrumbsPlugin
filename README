@@ -11,7 +11,7 @@ It consists of two modules, one for projects using Propel and the other one for 
 
   * Install the plugin
     
-        symfony plugin:install sfOrmBreadcrumbsPlugin-1.0.4.tgz
+        symfony plugin:install sfOrmBreadcrumbsPlugin-1.0.5.tgz
 
   * Activate the plugin in the `config/ProjectConfiguration.class.php`
   
@@ -183,3 +183,10 @@ The following parameters are not mandatory, they just tweak some stuff for a bet
 
         sf_orm_breadcrumbs:
           _lost: 'somewhere...'
+          
+  * Default case manipulation for breadcrumb name. You can set a php function name to manipulate the breadcrumbs name with.
+  You can choose among `ucfirst`, `lcfirst`, `strotolower`, `strtoupper`, `ucwords`.
+  You can even override this default setting by providing `case` option for a breadcrumb item, in the configuration file.
+
+        sf_orm_breadcrumbs:
+          _default_case: ucfirst

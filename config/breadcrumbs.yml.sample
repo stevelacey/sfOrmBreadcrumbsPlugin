@@ -4,6 +4,7 @@
 #  _root: { name: Homepage }     
 #  _separator: '>'
 #  _lost: 'somewhere...'
+#  _default_case: 'ucfirst'
 #
 #  main:
 #    index: [{ name: Home, route: homepage }]
@@ -13,5 +14,5 @@
 #      - { name: Blog, route: blog }
 #      - { name: %title%, route: post_show, model: true }
 #    permalink:
-#      - { name: 'Archive' }
+#      - { name: 'Archive', case: ucwords }
 #      - { name: %Post%, route: post_show, model: true, subobject: Post }
