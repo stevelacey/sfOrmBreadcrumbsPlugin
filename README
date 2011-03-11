@@ -63,7 +63,7 @@ The plugin parses breadcrumbs configuration from a `breadcrumbs.yml` in your app
 
   * Copy `breadcrumbs.yml` sample
 
-        cp plugins/sfOrmBreadcrumbsPlugin/config/breadcrumbs.yml.sample app/<application_name>/config/breadcrumbs.yml
+        cp plugins/sfOrmBreadcrumbsPlugin/config/breadcrumbs.yml.sample apps/<application_name>/config/breadcrumbs.yml
 
   * Here's the sample configuration, I will deeply explain how it works:
 
