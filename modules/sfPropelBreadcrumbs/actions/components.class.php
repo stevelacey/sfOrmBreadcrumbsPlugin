@@ -1,14 +1,13 @@
 <?php
 
-/*
+/**
  * 
  * @package    sfPropelBreadcrumbsPlugin
  * @subpackage modules
- * @author     Nicolò Pignatelli <info@nicolopignatelli.com>
-*/
-
+ * @author     Nicolï¿½ Pignatelli <info@nicolopignatelli.com>
+ * @version    SVN: $Id$
+ */
 require_once(dirname(__FILE__).'/../lib/BasesfPropelBreadcrumbsComponents.class.php');
-
 
 class sfPropelBreadcrumbsComponents extends BasesfPropelBreadcrumbsComponents
 {

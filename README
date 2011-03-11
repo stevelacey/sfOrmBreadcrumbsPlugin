@@ -178,6 +178,12 @@ The following parameters are not mandatory, they just tweak some stuff for a bet
         sf_orm_breadcrumbs:
           _separator: '&raquo;'
 
+  * Custom i18n catalogue. The default i18n catalogue for the breadcrumb is '`breadcrumb`'.
+  To set i18n catalogue:
+
+        sf_orm_breadcrumbs:
+          _i18n_catalogue: 'breadcrumb'
+
   * Lost text. If your configuration do not provide breadcrumbs for an action you are in, this text
   is displayed instead. Default text is '`somewhere`'. To set a custom text:
 
