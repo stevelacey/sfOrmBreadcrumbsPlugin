@@ -79,7 +79,8 @@ The plugin parses breadcrumbs configuration from a `breadcrumbs.yml` in your app
               - { name: %title%, route: post_show, model: true }
             permalink:
               - { name: 'Archive' }
-              - { name: %Post%, route: post_show, model: true, subobject: Post }
+              - { name: %Category%, route: category_show, model: true, object: Category/Post }
+              - { name: %Post%, route: post_show, model: true, object: Post }
   
   * Place the breadcrumbs config root element first in your file:
 
@@ -133,7 +134,7 @@ The plugin parses breadcrumbs configuration from a `breadcrumbs.yml` in your app
     * What if you are in a `sfDoctrineRoute` rule action and you want to point your breadcrumb to a rule for another
       model object? Let's take a look at the second `permalink` breadcrumb:
       
-            - { name: %Post%, route: post_show, model: true, subobject: Post }
+            - { name: %Post%, route: post_show, model: true, object: Post }
 
      Now, my current routing rule is this one:
      
@@ -151,8 +152,8 @@ The plugin parses breadcrumbs configuration from a `breadcrumbs.yml` in your app
             $permalink = new Permalink();
             $permalink->getPost(); //fetch original post
 
-     ...then I can tell the plugin to create a breadcrumb that takes a subobject (a Post) via class method
-     from my rule object (the Permalink) and link it to a `sfDoctrineRoute` suitable for the subobject.
+     ...then I can tell the plugin to create a breadcrumb that takes an object (a Post) via class method
+     from my rule object (the Permalink) and link it to a `sfDoctrineRoute` suitable for the object.
      
 NOTE: considerations and examples so far are equivalent and valid also with `sfPropelRoute` objects. It does not change anything.
 
